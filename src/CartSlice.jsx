@@ -1,4 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useSelector, useDispatch } from "react-redux";
+import { incrementQuantity, decrementQuantity } from "./venueSlice";
+
 
 export const CartSlice = createSlice({
   name: 'cart',
