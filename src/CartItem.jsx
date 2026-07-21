@@ -22,7 +22,11 @@ const CartItem = ({ onContinueShopping }) => {
 	
 };
 const venueTotalCost = calculateTotalCost("venue");
-
+const calculateTotalCost = (section) => {
+	let totalCost = 0;
+	if (section === "venue") {
+		venueItems.forEach((item) => {
+			totalCost += item.cost * item.quantity;
   };
 
   
