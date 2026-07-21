@@ -14,20 +14,39 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- 
+ const calculateTotalCost = (section) => {
+	let totalCost = 0;
+	if (section === "venue") {
+		venueItems.forEach((item) => {
+			totalCost += item.cost * item.quantity;
+	
+};
+const venueTotalCost = calculateTotalCost("venue");
+
   };
 
-  const handleContinueShopping = (e) => {
-   
-  };
+  
+   const handleCheckoutShopping = (e) => {
+  alert('Functionality to be added for future reference');
+};
+
+
+
 
 
 
   const handleIncrement = (item) => {
+      const { payload: index } = action;
+      if (state[index]) {
+        if (state[index].name === "Auditorium Hall (Capacity:200)" && state[index].quantity >= 3) {
+          return;        }
+        state[index].quantity++;
   };
 
   const handleDecrement = (item) => {
-   dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
+   const { payload: index } = action;
+      if (state[index] && state[index].quantity > 0) {
+        state[index].quantity--;
   };
 
   const handleRemove = (item) => {
